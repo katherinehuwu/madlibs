@@ -41,7 +41,7 @@ def show_game_form():
 @app.route("/madlib", methods=["POST", "GET"])
 def show_madlib():
     print request.method
-    if request.method == "post":
+    if request.method == "post":  
         the_car = request.form.getlist("car")
         the_weather = request.form.get("weather")
         the_mood = request.form.get("mood")
