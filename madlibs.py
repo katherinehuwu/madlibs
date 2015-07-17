@@ -38,16 +38,25 @@ def show_game_form():
         return render_template("goodbye.html")
 
     pass
-@app.route("/madlib")
+@app.route("/madlib", methods=["POST", "GET"])
 def show_madlib():
-
-    the_car = request.args.getlist("car")
-    the_weather = request.args.get("weather")
-    the_mood = request.args.get("mood")
-    the_person = request.args.get("person")
-    the_color = request.args.get("color")
-    the_noun = request.args.get("noun")
-    the_adjective = request.args.get("adjective")
+    print request.method
+    if request.method == "post":
+        the_car = request.form.getlist("car")
+        the_weather = request.form.get("weather")
+        the_mood = request.form.get("mood")
+        the_person = request.form.get("person")
+        the_color = request.form.get("color")
+        the_noun = request.form.get("noun")
+        the_adjective = request.form.get("adjective")
+    else:
+        the_car = request.args.getlist("car")
+        the_weather = request.args.get("weather")
+        the_mood = request.args.get("mood")
+        the_person = request.args.get("person")
+        the_color = request.args.get("color")
+        the_noun = request.args.get("noun")
+        the_adjective = request.args.get("adjective")
 
     return render_template(
     "madlib.html", person=the_person, color=the_color, 

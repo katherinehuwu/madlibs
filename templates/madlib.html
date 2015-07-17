@@ -2,10 +2,30 @@
 <html>
 <head>
     <title>MadLibs</title>
+    <link rel="stylesheet" type="text/css" href="madlibs/static/madlibs.css">
 </head>
 
 <body>
-    It was a very {{weather}} day. {{person}} just finished test driving the brand new {{car}}. However, {{person}} is super {{mood}}.{{Person}} saw a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way. The {{person}}
-    was extremely {{adjective}} and decided to go by a {{noun}} and color it in {{color}}.
+    <h3>Here's Your MadLibs!</h3>
+    <br>
+    <div id="img"><img src="http://ecx.images-amazon.com/images/I/51WaseLHdSL._SY344_BO1,204,203,200_.jpg">
+    </div>
+    
+    <p>Hi! It was a very {{weather}} day. {{person}} just finished test driving the brand new {% for car in car %}{{car}} {%endfor%}. However, {{person}} is super {{mood}}.{{person}} saw a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way. The {{person}}
+    was extremely {{adjective}} and decided to go by a {{noun}} and color it in {{color}}.</p>
+    <br>
+    
+    <form action="/game">
+    <label><h4>Did you enjoy playing this game?</h4> 
+        <br>
+        <input type="radio" name="decision" value="yes"> Yes I wanna play again!
+        <br>
+        <input type="radio" name="decision" value="no"> No I wanna go home...
+    </label>
+    <br>
+        <label><input type="submit"></label>
+    </form>
+
+
 </body>
 </html>
