@@ -6,11 +6,34 @@
 
     <body>
         <form action="/madlib">
-            <label>Alright let's play madlibs! Select a person, color, noun, and 
+            <label>Alright let's play madlibs!
+                <br>
+                Type in a mood in lowercase.
+                <br>
+                Choose a specifc weather.
+                <br>
+                Select a couple cars you would like to drive.
+                <br>
+                Then, select a person, color, noun, and 
                 adjective from the drop down menus. 
             </label>
             <br>
             <br>
+            Mood:
+            <input type="text" name="mood">
+            <br>
+
+            Weather:
+            <input type="radio" name="weather" value="sunny">Sunny
+            <input type="radio" name="weather" value="cloudy">Cloudy
+            
+            <br>
+            Car:
+            <input type="checkbox" name="car" value="Ford Escape">Ford Escape
+            <input type="checkbox" name="car" value="Toyota Echo"> Toyota Echo
+            <input type="checkbox" name="car" value="Mini Cooper">Mini Cooper
+            <br>
+
             Person:
             <select name="person">
                 <option value="Snoopy">Snoopy</option>

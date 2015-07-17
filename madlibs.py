@@ -40,12 +40,19 @@ def show_game_form():
     pass
 @app.route("/madlib")
 def show_madlib():
+
+    the_car = request.args.getlist("car")
+    the_weather = request.args.get("weather")
+    the_mood = request.args.get("mood")
     the_person = request.args.get("person")
     the_color = request.args.get("color")
     the_noun = request.args.get("noun")
     the_adjective = request.args.get("adjective")
 
-    return render_template("madlib.html", person=the_person, color=the_color, noun=the_noun, adjective=the_adjective)
+    return render_template(
+    "madlib.html", person=the_person, color=the_color, 
+    noun=the_noun, adjective=the_adjective, weather=the_weather, 
+    mood=the_mood, car=the_car)
 
 
 if __name__ == '__main__':
